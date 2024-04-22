@@ -1,0 +1,51 @@
+MODULE main
+VAR
+	state_ : {S0,S1,S2,S3,S4,S5,S6,S7,S8,S9,S10,S11,S12,S13,S14,S15,S16,S17,S18};
+	rec_first_tc : boolean;
+	new_ep : boolean;
+	wait_trans : boolean;
+	I_1 : boolean;
+	wait_trans : boolean;
+	II_1 : boolean;
+	rec_tc : boolean;
+	comp1 : boolean;
+	wait_trans : boolean;
+	III : boolean;
+	rec_tc : boolean;
+	1st_or_2nd : boolean;
+	3rd : boolean;
+	TTS_end : boolean;
+	stop : boolean;
+	rec_tc : boolean;
+	comp_3 : boolean;
+	wait_trans : boolean;
+	II_2 : boolean;
+	rec_tc : boolean;
+	comp_2 : boolean;
+	wait_trans : boolean;
+	I_1 : boolean;
+	TTS_end_last : boolean;
+	rec_tc : boolean;
+ASSIGN
+	init(state_) :=S0;
+	next(state_) :=case
+					(state_ = S0) : S1;
+					(state_ = S1) : S2;
+					(state_ = S2) : {S3, S18};
+					(state_ = S3) : {S3, S6, S4};
+					(state_ = S4) : S5;
+					(state_ = S5) : S1;
+					(state_ = S6) : {S6, S7, S13};
+					(state_ = S7) : {S8, S9};
+					(state_ = S8) : S6;
+					(state_ = S9) : S10;
+					(state_ = S10) : {S10, S11};
+					(state_ = S11) : S12;
+					(state_ = S12) : S1;
+					(state_ = S13) : {S13, S14, S16};
+					(state_ = S14) : S15;
+					(state_ = S15) : S1;
+					(state_ = S16) : {S17, S18};
+					(state_ = S17) : S1;
+					(state_ = S18) : S1;
+					A
